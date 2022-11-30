@@ -1,14 +1,8 @@
-export function valida(input) {
-    const tipoDeInput = input.dataset.tipo
+const dataNascimento = document.createElement('#nascimento')
 
-    if(validadores[tipoDeInput]) {
-        validadores[tipoDeInput](input)
-    }
-}
-
-const validadores = {
-    dataNascimento:input => validaDataNascimento(input)
-}
+dataNascimento.addEventListener('blur',(evento) => {
+    validaDataNascimento(evento.target)
+})
 
 function validaDataNascimento(input) {
     const dataRecebida = new Date(input.value)
